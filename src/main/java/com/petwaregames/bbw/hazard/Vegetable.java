@@ -13,13 +13,13 @@ public class Vegetable extends Hazard {
 
     @Override
     public Interaction interactWithPlayer(Interaction fromPlayer) {
-        String eatenVegetable = (String) fromPlayer.get("eat");
+        String eatenVegetable = (String) fromPlayer.get("consume");
 
         Interaction toPlayer = new Interaction();
 
 
         if ("cucumber".equalsIgnoreCase(eatenVegetable)) {
-            toPlayer.put("sleepy", true);
+            toPlayer.put("Sleepiness", Integer.valueOf("100"));
         }
 
         return toPlayer;
