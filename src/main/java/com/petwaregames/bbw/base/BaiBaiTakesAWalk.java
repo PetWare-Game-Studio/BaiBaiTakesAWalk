@@ -1,11 +1,19 @@
 package com.petwaregames.bbw.base;
 
+import javax.swing.*;
+
 /**
  * This is the main game class
  *
  * The game may enforce rules on the Board and its tokens
  */
-public class BaiBaiTakesAWalk {
+public class BaiBaiTakesAWalk extends JFrame {
+    public BaiBaiTakesAWalk (String title){
+        super(title);
+        board = new Board();
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+    }
 
     static long CLOCK_TICK_MILLISECONDS = 50;
 
@@ -14,6 +22,6 @@ public class BaiBaiTakesAWalk {
 
     public void start() {
         System.getLogger(this.getClass().getName()).log(System.Logger.Level.INFO, "game started...");
-        board = new Board();
+
     }
 }
