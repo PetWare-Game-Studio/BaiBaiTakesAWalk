@@ -29,12 +29,15 @@ public class Board implements Animated {
         gameTokens.remove(token);
     }
 
+
     public void onClockTick(){
 
     }
 
+
     public void onPlayerInput(){
 
     }
+
 
 }
