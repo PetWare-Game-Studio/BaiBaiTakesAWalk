@@ -1,6 +1,7 @@
 package com.petwaregames.bbw.base;
 
 import java.awt.event.KeyEvent;
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +10,7 @@ import java.util.List;
  * tokens are displayed against a background
  */
 
-public class Board implements Animated {
+public class Board extends JPanel implements Animated {
 
     /**
      * The Board maintains a list of tokens
