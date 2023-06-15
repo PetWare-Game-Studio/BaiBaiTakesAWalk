@@ -21,8 +21,8 @@ public class Board implements Animated {
      * or according to rules enforced by the board itself
      */
     private List<Token> gameTokens = new ArrayList<>();
-    private final int DEFAULT_WIDTH = 10;
-    private final int DEFAULT_HEIGHT = 10;
+    private int DEFAULT_WIDTH = 10;
+    private int DEFAULT_HEIGHT = 10;
 
     public void addToken(Token token){
         gameTokens.add(token);
