@@ -20,7 +20,7 @@ public class Board implements Animated {
      * Tokens are moved by the board in response to user input,
      * or according to rules enforced by the board itself
      */
-    private List<Token> gameTokens = new ArrayList<Token>();
+    private List<Token> gameTokens = new ArrayList<>();
 
     public void addToken(Token token){
         gameTokens.add(token);
@@ -33,7 +33,7 @@ public class Board implements Animated {
 
     }
 
-    private void onPlayerInput(){
+    public void onPlayerInput(){
 
     }
 
