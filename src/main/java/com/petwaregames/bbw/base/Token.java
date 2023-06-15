@@ -1,6 +1,6 @@
 package com.petwaregames.bbw.base;
 
-public class Token {
+public class Token implements Animated {
 
     /**
      * Each token has a short name which may be displayed by the board
