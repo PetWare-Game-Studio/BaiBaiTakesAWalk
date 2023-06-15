@@ -37,48 +37,6 @@ public class Token implements Animated {
      */
     private String soundFileName;
 
-    public Token(int positionX, int positionY) {
-        this.positionX = positionX;
-        this.positionY = positionY;
-    }
 
-    public String getName() {
-        return name;
-    }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public int getPositionX() {
-        return positionX;
-    }
-
-    public void setPositionX(int positionX) {
-        this.positionX = positionX;
-    }
-
-    public int getPositionY() {
-        return positionY;
-    }
-
-    public void setPositionY(int positionY) {
-        this.positionY = positionY;
-    }
-
-    public String getImageFileName() {
-        return imageFileName;
-    }
-
-    public void setImageFileName(String imageFileName) {
-        this.imageFileName = imageFileName;
-    }
-
-    public String getSoundFileName() {
-        return soundFileName;
-    }
-
-    public void setSoundFileName(String soundFileName) {
-        this.soundFileName = soundFileName;
-    }
 }
