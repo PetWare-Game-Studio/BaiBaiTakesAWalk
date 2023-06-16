@@ -1,9 +1,11 @@
 package com.petwaregames.bbw.base;
 
-public class Hazard extends Token implements Animated {
+public abstract class Hazard extends Token implements Animated {
 
-    public abstract Interaction interactWithPlayer(Interaction fromPlayer){
-
+    public Hazard(int positionX, int positionY) {
+        super(positionX, positionY);
     }
+
+    public abstract Interaction interactWithPlayer(Interaction fromPlayer);
 
 }
