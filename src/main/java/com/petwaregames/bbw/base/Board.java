@@ -12,6 +12,8 @@ import java.util.List;
  */
 
 public class Board extends JPanel implements Animated, KeyListener {
+    private final int DEFAULT_WIDTH = 10;
+    private final int DEFAULT_HEIGHT = 10;
 
     /**
      * The Board maintains a list of tokens
@@ -24,16 +26,29 @@ public class Board extends JPanel implements Animated, KeyListener {
      * or according to rules enforced by the board itself
      */
     private List<Token> gameTokens = new ArrayList<>();
-    private final int DEFAULT_WIDTH = 10;
-    private final int DEFAULT_HEIGHT = 10;
 
     public void addToken(Token token){
         gameTokens.add(token);
     }
-
     public void removeToken(Token token){
         gameTokens.remove(token);
     }
+
+    /**
+     * Phase 1 - The Board has a single player, which moves and
+     * acts according to user input
+     */
+
+    private Player player;
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
 
 
     public void onClockTick(){
@@ -44,6 +59,8 @@ public class Board extends JPanel implements Animated, KeyListener {
         for (Token token : gameTokens){
             token.onClockTick();
         }
+
+        player.onClockTick();
 
         // prevent the player from moving off the edge of the board sideways
 //        if (pos.x < 0) {
