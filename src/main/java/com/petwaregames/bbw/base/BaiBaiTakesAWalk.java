@@ -1,5 +1,7 @@
 package com.petwaregames.bbw.base;
 
+import com.petwaregames.bbw.player.BaiBai;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -11,6 +13,10 @@ import java.awt.event.ActionListener;
  * The game may enforce rules on the Board and its tokens
  */
 public class BaiBaiTakesAWalk extends JFrame implements ActionListener {
+
+    private Player player;
+    private Board board;
+
     public BaiBaiTakesAWalk (String title){
         super(title);
         board = new Board();
@@ -26,10 +32,13 @@ public class BaiBaiTakesAWalk extends JFrame implements ActionListener {
     private Timer timer;
 
 
-    private Board board;
 
     public void start() {
         System.getLogger(this.getClass().getName()).log(System.Logger.Level.INFO, "game started...");
+
+         player = new BaiBai(0,0);
+         board.setPlayer(player);
+
          timer = new Timer(CLOCK_TICK_MILLISECONDS, this);
          timer.start();
 
