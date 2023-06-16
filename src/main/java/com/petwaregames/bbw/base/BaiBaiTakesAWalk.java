@@ -37,7 +37,7 @@ public class BaiBaiTakesAWalk extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.getLogger(this.getClass().getName()).log(System.Logger.Level.INFO, "Clock tick");
+        System.getLogger(this.getClass().getName()).log(System.Logger.Level.DEBUG, "Clock tick");
         board.onClockTick();
     }
 }
