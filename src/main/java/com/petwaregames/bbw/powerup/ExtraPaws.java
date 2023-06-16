@@ -4,11 +4,13 @@ import com.petwaregames.bbw.base.Interaction;
 import com.petwaregames.bbw.base.PowerUp;
 
 public class ExtraPaws extends PowerUp {
+    public ExtraPaws(int positionX, int positionY) {
+        super(positionX, positionY);
+    }
+
     @Override
     public void onClockTick() {
         // Not animated
-
-
     }
 
     @Override

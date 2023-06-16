@@ -6,6 +6,10 @@ import com.petwaregames.bbw.base.Interaction;
 
 public class Vegetable extends Hazard {
 
+    public Vegetable(int positionX, int positionY) {
+        super(positionX, positionY);
+    }
+
     @Override
     public void onClockTick() {
         // Not animated

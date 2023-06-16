@@ -18,7 +18,8 @@ public class Token implements Animated {
     /**
      * Each token has a current location in the board coordinate system
      */
-    private int positionX, positionY;
+    private int positionX;
+    private int positionY;
 
     /**
      * Each token has a primary image file, which may be displayed
@@ -42,8 +43,16 @@ public class Token implements Animated {
         this.positionY = positionY;
     }
 
+    protected void setName(String name){
+        this.name = name;
+    }
+
     public String getName() {
         return name;
+    }
+
+    protected void setDescription(String description){
+        this.description = description;
     }
 
     public String getDescription() {

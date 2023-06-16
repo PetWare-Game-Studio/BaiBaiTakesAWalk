@@ -18,4 +18,7 @@ public class Player extends Token implements Animated {
     private int sleepiness;
 
 
+    public Player(int positionX, int positionY) {
+        super(positionX, positionY);
+    }
 }

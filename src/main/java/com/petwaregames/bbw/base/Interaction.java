@@ -12,14 +12,16 @@ import java.util.HashMap;
  * to adjust the attribute, e.g., Integer.valueOf(-1)
  */
 
-// Possible names to send to player = "sleepiness", "happiness", "points"
+// Possible names in returned Interaction = "sleepiness", "happiness", "points"
 // All take an integer value
 
-// Possible names fromPlayer = "consume"
-// Value is integer represents a percentage
-// Possible names for any interaction
-// "name"
-// "description"
+// Possible names in fromPlayer Interaction = "action"
+// Value is a String that represents a way of interacting
+// Possible values are "touch", "sniff", "taste", "eat"
+
+// Possible names for all interaction
+// "name"  - String Value is the name of the interacting token
+// "description" - String Value describes the nature of th einteraction
 
 public class Interaction extends HashMap<String, Object> {
 

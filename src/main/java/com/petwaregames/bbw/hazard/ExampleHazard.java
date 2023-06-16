@@ -5,6 +5,10 @@ import com.petwaregames.bbw.base.Interaction;
 
 public class ExampleHazard extends Hazard {
 
+    public ExampleHazard(int positionX, int positionY) {
+        super(positionX, positionY);
+    }
+
     @Override
     public void onClockTick() {
         // Not animated
