@@ -10,6 +10,7 @@ public class BaiBai extends Player {
         super(positionX, positionY);
         setName("Bai-Bai");
         setDescription("The Hero of our story!");
+        setImageFileName("BaiBai_BrightEyed_50x50.png");
     }
 
     @Override
