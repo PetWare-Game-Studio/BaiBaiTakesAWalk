@@ -24,6 +24,23 @@ Various hazards and power-ups are waiting in the yard!  What will Bai-Bai find?
  - Treats
  - ExtraPaws
 
+## Game Architecture
+
+The following classes are defined in the com.petwares.bbw.base package, and
+supply the core event handling
+
+### BaiBaiTakesAWalk
+
+### Board
+
+### Token
+
+### Player
+
+### Hazard
+
+### PowerUp
+
 
 
 
