@@ -9,10 +9,12 @@ public class Main {
 
         System.getLogger("Main").log(System.Logger.Level.INFO, "main entered");
 
+        // Initialize the game on the Swing event thread
+
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new BaiBaiTakesAWalk("BaiBai Takes A Walk!").start();
+                new BaiBaiTakesAWalk().start();
             }
         });
 

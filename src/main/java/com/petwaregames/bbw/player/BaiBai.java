@@ -2,6 +2,8 @@ package com.petwaregames.bbw.player;
 
 import com.petwaregames.bbw.base.Player;
 
+import java.awt.event.InputEvent;
+
 public class BaiBai extends Player {
 
     public BaiBai(int positionX, int positionY) {
@@ -13,5 +15,10 @@ public class BaiBai extends Player {
     @Override
     public void onClockTick() {
         super.onClockTick();
+    }
+
+    @Override
+    public void onUserInput(InputEvent event) {
+        super.onUserInput(event);
     }
 }
