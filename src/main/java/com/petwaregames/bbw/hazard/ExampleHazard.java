@@ -12,17 +12,23 @@ public class ExampleHazard extends Hazard {
         setDescription("This is a pile of yucky stuff that smells pretty good");
     }
 
-    int clockTicks;
+    int clockTicks = 0;
 
     @Override
     public void onClockTick() {
-        if (++clockTicks % 50 == 0) {
-            clockTicks = 0;
-            setImageFileName("ExampleHazard_poo_1_50x50.png");
-        }
-        else {
+        if (++clockTicks % 20 != 0) return;
+
+        clockTicks = 0;
+
+        // Swap images
+        // TODO - FIX this - detecting which image is displayed by checking the filename is clumsy
+        if (getImageFileName().equals("ExampleHazard_poo_1_50x50.png")){
             setImageFileName("ExampleHazard_poo_2_50x50.png");
         }
+        else {
+            setImageFileName("ExampleHazard_poo_1_50x50.png");
+        }
+
     }
 
 
