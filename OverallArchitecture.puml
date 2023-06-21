@@ -1,0 +1,147 @@
+@startuml
+class com.petwaregames.bbw.hazard.Pests {
++ void onClockTick()
++ Interaction interactWithPlayer(Interaction)
+}
+class com.petwaregames.bbw.base.Interaction {
+}
+class com.petwaregames.bbw.base.Token {
+- String name
+- String description
+# int positionX
+# int positionY
+- String imageFileName
+- BufferedImage image
+- String soundFileName
++ void draw(Graphics2D)
+# void setName(String)
++ String getName()
+# void setDescription(String)
++ String getDescription()
++ int getPositionX()
++ void setPositionX(int)
++ int getPositionY()
++ void setPositionY(int)
++ String getImageFileName()
++ void setImageFileName(String)
++ String getSoundFileName()
++ void setSoundFileName(String)
+}
+class com.petwaregames.bbw.base.Sound {
++ void playInBackground()
++ void play()
+}
+class com.petwaregames.bbw.powerup.Treats {
+}
+class com.petwaregames.bbw.hazard.Puddle {
++ void onClockTick()
++ Interaction interactWithPlayer(Interaction)
+}
+class com.petwaregames.bbw.base.BaiBaiTakesAWalk {
+~ {static} int CLOCK_TICK_MILLISECONDS
+~ {static} String GAME_NAME
+- Board board
+- Player player
+- Timer timer
+- void initUI()
++ void start()
+}
+class com.petwaregames.bbw.base.BaiBaiTakesAWalk$TimerHandler {
++ void actionPerformed(ActionEvent)
+}
+class com.petwaregames.bbw.base.BaiBaiTakesAWalk$KeyboardInputHandler {
++ void keyTyped(KeyEvent)
++ void keyPressed(KeyEvent)
++ void keyReleased(KeyEvent)
+}
+class com.petwaregames.bbw.base.Board {
+~ {static} int TILE_SIZE
+~ {static} int ROWS
+~ {static} int COLS
+- List<Token> gameTokens
+- Player player
++ void addToken(Token)
++ void removeToken(Token)
++ Player getPlayer()
++ void setPlayer(Player)
++ void onClockTick()
+# void paintComponent(Graphics)
+- void drawPlayer(Graphics2D)
+- void drawTokens(Graphics2D)
+- void drawBackground(Graphics2D)
++ void onUserInput(InputEvent)
+~ void confinePlayerToBoard()
+}
+class com.petwaregames.bbw.powerup.Pumpkin {
+}
+interface com.petwaregames.bbw.base.AcceptsUserInput {
+~ void onUserInput(InputEvent)
+}
+class com.petwaregames.bbw.player.BaiBai {
++ void onClockTick()
++ void onUserInput(InputEvent)
+}
+class com.petwaregames.bbw.powerup.ExtraPaws {
++ void onClockTick()
++ Interaction interactWithPlayer(Interaction)
+}
+abstract class com.petwaregames.bbw.base.PowerUp {
++ {abstract}Interaction interactWithPlayer(Interaction)
+}
+class com.petwaregames.bbw.hazard.ExampleHazard {
+~ int clockTicks
++ void onClockTick()
++ Interaction interactWithPlayer(Interaction)
+}
+class com.petwaregames.bbw.Main {
++ {static} void main(String[])
+}
+abstract class com.petwaregames.bbw.base.Hazard {
++ {abstract}Interaction interactWithPlayer(Interaction)
+}
+class com.petwaregames.bbw.base.Player {
+- int points
+- int happiness
+- int sleepiness
++ void onUserInput(InputEvent)
+}
+class com.petwaregames.bbw.base.ImageCache {
+- {static} Map<String,BufferedImage> images
+- {static} BufferedImage DEFAULT_IMAGE
+- {static} BufferedImage BACKGROUND_IMAGE
++ {static} BufferedImage getImage(String)
+- {static} BufferedImage loadImage(String)
+}
+class com.petwaregames.bbw.hazard.Vegetable {
++ void onClockTick()
++ Interaction interactWithPlayer(Interaction)
+}
+interface com.petwaregames.bbw.base.Animated {
+~ void onClockTick()
+}
+
+
+com.petwaregames.bbw.base.Hazard <|-- com.petwaregames.bbw.hazard.Pests
+java.util.HashMap <|-- com.petwaregames.bbw.base.Interaction
+com.petwaregames.bbw.base.Animated <|.. com.petwaregames.bbw.base.Token
+com.petwaregames.bbw.base.Hazard <|-- com.petwaregames.bbw.hazard.Puddle
+javax.swing.JFrame <|-- com.petwaregames.bbw.base.BaiBaiTakesAWalk
+com.petwaregames.bbw.base.BaiBaiTakesAWalk +.. com.petwaregames.bbw.base.BaiBaiTakesAWalk$TimerHandler
+com.petwaregames.bbw.base.ActionListener <|.. com.petwaregames.bbw.base.BaiBaiTakesAWalk$TimerHandler
+com.petwaregames.bbw.base.BaiBaiTakesAWalk +.. com.petwaregames.bbw.base.BaiBaiTakesAWalk$KeyboardInputHandler
+com.petwaregames.bbw.base.KeyListener <|.. com.petwaregames.bbw.base.BaiBaiTakesAWalk$KeyboardInputHandler
+com.petwaregames.bbw.base.Animated <|.. com.petwaregames.bbw.base.Board
+com.petwaregames.bbw.base.AcceptsUserInput <|.. com.petwaregames.bbw.base.Board
+javax.swing.JPanel <|-- com.petwaregames.bbw.base.Board
+com.petwaregames.bbw.base.Player <|-- com.petwaregames.bbw.player.BaiBai
+com.petwaregames.bbw.base.PowerUp <|-- com.petwaregames.bbw.powerup.ExtraPaws
+com.petwaregames.bbw.base.Animated <|.. com.petwaregames.bbw.base.PowerUp
+com.petwaregames.bbw.base.Token <|-- com.petwaregames.bbw.base.PowerUp
+com.petwaregames.bbw.base.Hazard <|-- com.petwaregames.bbw.hazard.ExampleHazard
+com.petwaregames.bbw.base.Animated <|.. com.petwaregames.bbw.base.Hazard
+com.petwaregames.bbw.base.Token <|-- com.petwaregames.bbw.base.Hazard
+com.petwaregames.bbw.base.Animated <|.. com.petwaregames.bbw.base.Player
+com.petwaregames.bbw.base.AcceptsUserInput <|.. com.petwaregames.bbw.base.Player
+com.petwaregames.bbw.base.Token <|-- com.petwaregames.bbw.base.Player
+com.petwaregames.bbw.base.Hazard <|-- com.petwaregames.bbw.hazard.Vegetable
+@enduml
