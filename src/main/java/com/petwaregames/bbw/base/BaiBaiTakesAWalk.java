@@ -3,7 +3,8 @@ package com.petwaregames.bbw.base;
 import com.petwaregames.bbw.hazard.ExampleHazard;
 import com.petwaregames.bbw.player.BaiBai;
 
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.Timer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
